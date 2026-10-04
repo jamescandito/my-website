@@ -20,6 +20,13 @@
             padding: 10px 20px;
             cursor: pointer;
         }
+
+        #sylvester {
+            display: none;
+            margin: 30px auto;
+            max-width: 400px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -29,11 +36,28 @@
 
     <p>This website is hosted on GitHub.</p>
 
-    <button onclick="sayHello()">Click me</button>
+    <button onclick="toggleSylvester()">Show Sylvester</button>
+
+    <img
+        id="sylvester"
+        src="cartoon_performer.jpg"
+        alt="Sylvester the Jester"
+    >
 
     <script>
-        function sayHello() {
-            alert("It works!");
+        function toggleSylvester() {
+
+            const image = document.getElementById("sylvester");
+            const button = document.querySelector("button");
+
+            if (image.style.display === "block") {
+                image.style.display = "none";
+                button.textContent = "Show Sylvester";
+            } else {
+                image.style.display = "block";
+                button.textContent = "Hide Sylvester";
+            }
+
         }
     </script>
 
